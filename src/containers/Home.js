@@ -13,14 +13,14 @@ function Home() {
     console.log(wordInput);
 
     const url_1 = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordInput}`
-    const url_2 = `http://api.giphy.com/v1/gifs/translate?s=${wordInput}&api_key=k364FjEl3SMVa01bo63nZWqlaTDQdQTN&weirdness=9`
+    const url_2 = `http://api.giphy.com/v1/gifs/translate?s=${wordInput}&api_key=k364FjEl3SMVa01bo63nZWqlaTDQdQTN&weirdness=10`
     axios.get(url_1)
     .then(function (response) {
       setWordData(response.data);
       return axios.get(url_2)
-    })
-    .then(function (response) {
-      setGifData(response.data);
+      .then(function (response) {
+        setGifData(response.data);
+      })
     })
     .catch(function (error) {
       console.warn(error);
@@ -37,19 +37,19 @@ function Home() {
       return{
         aWord: wordData[0].word, 
         pos: wordData[0].meanings[0].partOfSpeech,
-        definition: wordData[0].meanings[0].definitions[0], 
-  
+        definition: wordData[0].meanings[0].definitions[0].definition, 
       }
     }, [wordData])
 
     const gifItem = useMemo(() => {
       if (!gif) return{};
   
-      return{ gifItem: gif.data.url }
-    }, [gif])
+      return{
+        gifItem: gif.data.images.fixed_height.url,
+       }
+      }, [gif])
 
     const gifUrl = gifItem.gifItem; 
-    //console.log(gifUrl);
 
     return (
       <>
