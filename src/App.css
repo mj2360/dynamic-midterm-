@@ -1,42 +1,97 @@
 @font-face {
-    font-family: 'Playfair Display';
-    font-weight: 600; 
-    src: local('Playfair Display'), url(./fonts/static/PlayfairDisplay-SemiBold.ttf) format('truetype');
-  }
-  
-  @font-face {
-      font-family: 'Playfair Display';
-      src: local('Playfair Display'), url(./fonts/static/PlayfairDisplay-Regular.ttf) format('truetype');
-  }
-  
-.displayBox{
-    display: flex; 
-    justify-content: center;
-    margin: 40px; 
+  font-family: "Playfair Display";
+  font-weight: 600;
+  src: local("Playfair Display"),
+    url(./fonts/static/PlayfairDisplay-SemiBold.ttf) format("truetype");
 }
 
-.wordWrapper{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    padding: 0px, 15px;
+@font-face {
+  font-family: "Playfair Display";
+  src: local("Playfair Display"),
+    url(./fonts/static/PlayfairDisplay-Regular.ttf) format("truetype");
 }
 
-.word{
-    text-transform: capitalize;
-    font-size: 48px;
-    font-weight: 600;
-    font-family: 'Playfair Display', serif;
-    margin: 0px, 8px, 8px;
+.displayBox {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
 }
 
-.POS{
-    color: #4A7D95;
-    font-family: 'Playfair Display', serif;
-    font-size: 26px; 
-    font-weight: 600; 
-    margin-left: 15px;
-    padding-left: 15px;
-   
+.definition {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
 }
 
+.defOf {
+  color: #265667;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin-bottom: -10px;
+}
+
+.gif {
+  padding-top: 20px;
+}
+
+.resWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.wordWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 0px, 15px;
+}
+
+.word {
+  text-transform: capitalize;
+  font-size: 48px;
+  font-weight: 600;
+  font-family: "Playfair Display", serif;
+  margin: 0px, 8px, 8px;
+}
+
+.POS {
+  color: #4a7d95;
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-left: 15px;
+  padding-left: 15px;
+}
+
+.wrapper {
+  display: flex;
+  width: 90%;
+  min-width: 100px;
+}
+
+.search {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 25px;
+  width: 96%;
+  padding: 2px 23px 2px 32px;
+  margin: 3px;
+  outline: 0;
+  background-color: #f5f5f5;
+}
+
+.search:hover,
+.search:focus {
+  border: 1px solid #97caef;
+  background-color: white;
+}
+
+.submit {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
